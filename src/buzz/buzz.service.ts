@@ -27,12 +27,10 @@ export class BuzzService {
         let res = await this.buzzModel.create(buzz);
         return res
     }
-
     async updateBuzz(id: string, buzz: Buzz) {
         let res = await this.buzzModel.updateOne({ _id:id }, { ...buzz });
         return res;
     }
-
 
     async deleteBuzz(id: string) {
         let res = await this.buzzModel.findOneAndDelete({ _id: id });
